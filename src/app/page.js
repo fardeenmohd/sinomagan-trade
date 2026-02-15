@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { products } from '@/data/products';
 import { ArrowRight, Anchor, TrendingUp, ShieldCheck, MapPin, Globe } from 'lucide-react';
 import BusinessCard from '@/components/BusinessCard';
+import ProductCarousel from '@/components/ProductCarousel';
 
 // --- DATA: Countries for Homepage ---
 const globalNetwork = [
@@ -79,48 +80,28 @@ export default function Home() {
       </div>
 
       {/* --- EXPORT PORTFOLIO SECTION --- */}
-      <div className="max-w-7xl mx-auto px-4 py-20 w-full">
-        <div className="text-center mb-16">
-          <span className="text-brand-copper font-bold tracking-widest uppercase text-xs mb-2 block">
-             Our Commodities
-          </span>
-          <h2 className="font-serif text-4xl text-brand-navy font-bold mb-4">Export Portfolio</h2>
-          <div className="h-1 w-24 bg-brand-copper mx-auto"></div>
-        </div>
+      <div className="bg-brand-white py-24 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 w-full">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+              <span className="text-brand-copper font-bold tracking-widest uppercase text-xs mb-2 block">
+                Our Commodities
+              </span>
+              <h2 className="font-serif text-4xl text-brand-navy font-bold">Export Portfolio</h2>
+            </div>
+            
+            <Link 
+              href="/products" 
+              className="group flex items-center gap-2 text-brand-navy font-bold hover:text-brand-copper transition-colors"
+            >
+              View Full Catalog <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {products.slice(0, 3).map((product) => (
-            <Link key={product.id} href={`/product/${product.id}`} className="group block h-full">
-              <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100 h-full flex flex-col">
-                <div className="relative h-64 w-full">
-                  <Image 
-                    src={product.image} 
-                    alt={product.title}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    className="group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="font-serif text-xl font-bold text-brand-navy mb-2 group-hover:text-brand-copper transition-colors">
-                    {product.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">{product.shortDesc}</p>
-                  <div className="mt-auto flex items-center text-brand-crimson font-medium text-sm">
-                    View Specs <ArrowRight className="w-4 h-4 ml-1" />
-                  </div>
-                </div>
-              </div>
-            </Link>
-          ))}
+          {/* THE CAROUSEL */}
+          <ProductCarousel products={products} />
         </div>
-        
-        <div className="text-center">
-            <Link href="/products" className="inline-block border border-brand-navy text-brand-navy px-8 py-3 rounded font-bold hover:bg-brand-navy hover:text-white transition-colors">
-                View Full Catalog
-            </Link>
         </div>
-      </div>
 
       {/* --- NEW SECTION: GLOBAL PRESENCE --- */}
       <div className="bg-brand-navy py-20 text-white relative overflow-hidden">

@@ -4,6 +4,12 @@ import { products } from '@/data/products';
 import { ArrowLeft, CheckCircle2, FileText, Globe, Shield } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
+export async function generateStaticParams() {
+  return products.map((product) => ({
+    id: product.id,
+  }));
+}
+
 export default async function ProductDetail({ params }) {
   const { id } = await params; 
 

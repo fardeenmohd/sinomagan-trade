@@ -38,7 +38,7 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col">
               <span className="font-serif font-bold text-xl tracking-wide leading-none group-hover:text-brand-copper transition-colors">
-                SINO MAGAN
+                SINO MAGAN INDUS
               </span>
               <span className="text-[10px] text-gray-300 tracking-widest uppercase">
                 Global Trade LLP

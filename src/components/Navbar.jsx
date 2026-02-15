@@ -15,6 +15,7 @@ export default function Navbar() {
     { name: 'Products', href: '/products' },
     { name: 'Countries', href: '/global-reach' },
     { name: 'Contact', href: '/contact' },
+    { name: 'About', href: '/about' }
   ];
 
   const isActive = (path) => pathname === path;

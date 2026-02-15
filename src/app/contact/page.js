@@ -1,111 +1,143 @@
-'use client'; // <--- Critical for Client Components
+'use client';
 import React from 'react';
-import { useForm, ValidationError } from '@formspree/react';
 import BusinessCard from '@/components/BusinessCard';
+import { useForm, ValidationError } from '@formspree/react';
+import { Mail, Phone, MapPin, Send, Clock, Globe, CheckCircle } from 'lucide-react';
 
-export default function Contact() {
-  // REPLACE "YOUR_FORM_ID" WITH YOUR ACTUAL ID (e.g., "mwkdlqap")
+export default function ContactPage() {
+  // Replace "your_form_id" with your actual Formspree ID (e.g., "mqkvpown")
   const [state, handleSubmit] = useForm("xykdwbgr");
 
-  // This shows up AFTER they submit the form successfully
+  // Success Message View
   if (state.succeeded) {
-      return (
-        <div className="min-h-screen bg-brand-white py-20 flex items-center justify-center">
-            <div className="bg-white p-10 rounded-lg shadow-lg text-center max-w-md border-t-4 border-brand-copper">
-                <div className="text-5xl mb-4">✨</div>
-                <h2 className="text-2xl font-serif font-bold text-brand-navy mb-2">Message Received!</h2>
-                <p className="text-brand-slate mb-6">
-                    Thank you for reaching out to Sino Magan Indus. Our team will review your inquiry and respond within 24 hours.
-                </p>
-                <button 
-                    onClick={() => window.location.reload()} 
-                    className="text-brand-copper font-bold hover:text-brand-navy underline"
-                >
-                    Send another message
-                </button>
-            </div>
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center px-4 text-center">
+        <div className="max-w-md p-10 bg-gray-50 rounded-2xl border border-brand-copper/20">
+          <CheckCircle className="w-16 h-16 text-brand-copper mx-auto mb-6" />
+          <h2 className="font-serif text-3xl font-bold text-brand-navy mb-4">Inquiry Received</h2>
+          <p className="text-gray-600 mb-8">
+            Thank you for reaching out to Sino Magan Indus. Our trade desk has been notified and will respond within 24 business hours.
+          </p>
+          <button 
+            onClick={() => window.location.reload()} 
+            className="text-brand-copper font-bold hover:underline"
+          >
+            Send another message
+          </button>
         </div>
-      );
+      </div>
+    );
   }
 
   return (
-    <div className="min-h-screen bg-brand-white py-20">
-      <div className="max-w-7xl mx-auto px-4">
-        
-        {/* Header */}
-        <div className="text-center mb-16">
-           <h1 className="font-serif text-4xl md:text-5xl text-brand-navy font-bold mb-4">Start a Conversation</h1>
-           <p className="text-brand-slate text-lg">We are ready to handle your logistics and sourcing needs.</p>
-        </div>
+    <div className="min-h-screen bg-white">
+      {/* --- HEADER --- */}
+      <div className="bg-brand-navy py-16 px-4 text-center">
+        <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">Contact Our Trade Desk</h1>
+        <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          Have a specific sourcing requirement or logistics query? Our global team is ready to assist you.
+        </p>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           
-          {/* Left Side: Business Card */}
-          <div className="flex justify-center md:justify-end">
-            <BusinessCard />
-          </div>
-
-          {/* Right Side: The Form */}
-          <div className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-brand-navy">
+          {/* LEFT SIDE: The Formspree Form */}
+          <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 shadow-sm">
+            <h2 className="font-serif text-2xl font-bold text-brand-navy mb-6">Send an Inquiry</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
-              
-              {/* Name Field */}
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-brand-slate mb-2">
-                    Your Name / Company
-                </label>
-                <input
-                  id="name"
-                  type="text" 
-                  name="name"
-                  required
-                  className="w-full px-4 py-3 border border-gray-200 rounded focus:outline-none focus:border-brand-copper bg-brand-white text-brand-slate"
-                  placeholder="e.g. John Doe, Acme Corp"
-                />
-                <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-500 text-sm mt-1" />
-              </div>
-              
-              {/* Email Field */}
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-brand-slate mb-2">
-                    Email Address
-                </label>
-                <input
-                  id="email"
-                  type="email" 
-                  name="email"
-                  required
-                  className="w-full px-4 py-3 border border-gray-200 rounded focus:outline-none focus:border-brand-copper bg-brand-white text-brand-slate"
-                  placeholder="john@company.com"
-                />
-                <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-sm mt-1" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="full-name" className="block text-xs font-bold text-brand-navy uppercase mb-2">Full Name</label>
+                  <input 
+                    id="full-name"
+                    name="name"
+                    type="text" 
+                    required 
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-copper outline-none" 
+                    placeholder="John Doe" 
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-xs font-bold text-brand-navy uppercase mb-2">Email Address</label>
+                  <input 
+                    id="email"
+                    name="email"
+                    type="email" 
+                    required 
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-copper outline-none" 
+                    placeholder="john@company.com" 
+                  />
+                  <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-xs mt-1" />
+                </div>
               </div>
 
-              {/* Message Field */}
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-brand-slate mb-2">
-                    Inquiry Details
-                </label>
-                <textarea
+                <label htmlFor="subject" className="block text-xs font-bold text-brand-navy uppercase mb-2">Subject</label>
+                <select 
+                  id="subject"
+                  name="subject"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-copper outline-none bg-white"
+                >
+                  <option>Product Sourcing Inquiry</option>
+                  <option>Logistics & Shipping</option>
+                  <option>Partnership Proposal</option>
+                  <option>General Feedback</option>
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-xs font-bold text-brand-navy uppercase mb-2">Message</label>
+                <textarea 
                   id="message"
                   name="message"
-                  rows="4"
-                  required
-                  className="w-full px-4 py-3 border border-gray-200 rounded focus:outline-none focus:border-brand-copper bg-brand-white text-brand-slate"
-                  placeholder="I am interested in sourcing onions to Dubai..."
-                />
-                <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-500 text-sm mt-1" />
+                  rows="4" 
+                  required 
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-copper outline-none" 
+                  placeholder="Please describe your requirements..."
+                ></textarea>
+                <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-500 text-xs mt-1" />
               </div>
 
-              {/* Submit Button */}
               <button 
                 type="submit" 
                 disabled={state.submitting}
-                className="w-full bg-brand-copper text-white py-3 rounded font-bold hover:bg-brand-navy transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-brand-navy text-white font-bold py-4 rounded-lg hover:bg-brand-copper disabled:bg-gray-400 transition-all flex items-center justify-center gap-2"
               >
-                {state.submitting ? 'Sending...' : 'Send Inquiry'}
+                {state.submitting ? "Sending..." : (
+                  <>
+                    <Send className="w-4 h-4" /> Send Message
+                  </>
+                )}
               </button>
             </form>
+          </div>
+
+          {/* RIGHT SIDE: Business Card (Unchanged) */}
+          <div className="space-y-12">
+            <div>
+              <h2 className="font-serif text-2xl font-bold text-brand-navy mb-6 uppercase tracking-tight">Immediate Assistance</h2>
+              <div className="transform scale-95 origin-left">
+                <BusinessCard />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="flex gap-4">
+                <div className="p-3 bg-brand-copper/10 rounded-lg h-fit text-brand-copper"><Clock className="w-6 h-6" /></div>
+                <div>
+                  <h4 className="font-bold text-brand-navy">Business Hours</h4>
+                  <p className="text-sm text-gray-600">Mon - Fri: 9:00 AM - 6:00 PM<br/>Sat: 10:00 AM - 2:00 PM</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="p-3 bg-brand-copper/10 rounded-lg h-fit text-brand-copper"><Globe className="w-6 h-6" /></div>
+                <div>
+                  <h4 className="font-bold text-brand-navy">Global Support</h4>
+                  <p className="text-sm text-gray-600">Available across all timezones for active shipments.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

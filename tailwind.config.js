@@ -1,26 +1,36 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}", 
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
+      fontFamily: {
+        // This stack mimics the Apple system font perfectly
+        sans: [
+          '-apple-system', 
+          'BlinkMacSystemFont', 
+          '"Segoe UI"', 
+          'Roboto', 
+          'Helvetica', 
+          'Arial', 
+          'sans-serif', 
+          '"Apple Color Emoji"', 
+          '"Segoe UI Emoji"'
+        ],
+        // Keeping a serif option for your elegant headings if you still want them
+        serif: ['ui-serif', 'Georgia', 'serif'],
+      },
       colors: {
         brand: {
-          navy: '#0B2545',
-          copper: '#C68E4F',
-          crimson: '#8D2222',
-          white: '#F7F9FB',
-          slate: '#334155',
+          navy: '#001a33',
+          copper: '#b87333',
+          crimson: '#990000',
+          white: '#ffffff',
+          slate: '#475569',
         }
-      },
-      fontFamily: {
-        sans: ['var(--font-inter)'], 
-        serif: ['var(--font-playfair)'],
       }
     },
   },
   plugins: [],
-};
+}

@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body {
+  /* This makes text look "sharper" like on a MacBook Pro screen */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.011em; /* Subtle tightening typical of Apple's UI */
+  color: #1d1d1f; /* Apple's specific "Jet Black" for text */
 }
 
-/* Your Brand Overrides */
-body {
-  background-color: #F7F9FB; /* brand-white */
-  color: #334155;            /* brand-slate */
+h1, h2, h3, h4 {
+  letter-spacing: -0.022em; /* Heavier tightening for bold headings */
 }

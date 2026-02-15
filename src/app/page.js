@@ -62,14 +62,32 @@ export default function Home() {
                     <span className="text-sm font-medium">Quality Assured</span>
                 </div>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Link href="/contact" className="bg-brand-copper text-white px-8 py-3 rounded font-bold hover:bg-white hover:text-brand-navy transition-all shadow-lg hover:shadow-brand-copper/50">
-                Request a Quote
-              </Link>
-              <Link href="/products" className="px-8 py-3 rounded font-bold text-white border border-gray-600 hover:border-brand-copper hover:text-brand-copper transition-all">
-                View Portfolio
-              </Link>
-            </div>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center lg:justify-start">
+                {/* Primary CTA */}
+                <Link 
+                  href="/contact" 
+                  className="bg-brand-copper text-white px-8 py-3 rounded font-bold hover:bg-white hover:text-brand-navy transition-all shadow-lg hover:shadow-brand-copper/50 text-center"
+                >
+                  Request a Quote
+                </Link>
+
+                {/* Secondary Link 1: Products */}
+                <Link 
+                  href="/products" 
+                  className="px-8 py-3 rounded font-bold text-white border border-gray-600 hover:border-brand-copper hover:text-brand-copper transition-all text-center flex items-center justify-center gap-2"
+                >
+                  View Portfolio
+                </Link>
+
+                {/* Secondary Link 2: Global Reach (NEW) */}
+                <Link 
+                  href="/global-reach" 
+                  className="px-8 py-3 rounded font-bold text-white border border-gray-600 hover:border-brand-copper hover:text-brand-copper transition-all text-center flex items-center justify-center gap-2 group"
+                >
+                  <Globe className="w-4 h-4 group-hover:rotate-12 transition-transform" />
+                  Countries
+                </Link>
+              </div>
           </div>
           <div className="flex-1 w-full max-w-md flex justify-center lg:justify-end">
              <div className="transform transition-transform hover:scale-105 duration-500">

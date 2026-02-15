@@ -58,7 +58,7 @@ export default function Home() {
               </Link>
               <Link href="/global-reach" className="px-8 py-4 rounded-full font-semibold text-white border border-white/20 hover:border-brand-copper hover:text-brand-copper transition-all text-center flex items-center justify-center gap-2 group">
                 <Globe className="w-4 h-4 group-hover:rotate-12 transition-transform" />
-                Global Reach
+                Countries
               </Link>
             </div>
           </div>

@@ -51,6 +51,34 @@ export default function AboutPage() {
         </div>
       </div>
 
+      <div className="border-y border-gray-100 bg-white">
+        <div className="max-w-7xl mx-auto px-6 py-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            
+            <div className="text-center md:border-r border-gray-100 last:border-0">
+              <div className="text-4xl md:text-5xl font-semibold text-brand-navy tracking-tighter mb-1">7</div>
+              <div className="text-[10px] font-bold text-brand-copper uppercase tracking-[0.2em]">Global Markets</div>
+            </div>
+
+            <div className="text-center md:border-r border-gray-100 last:border-0">
+              <div className="text-4xl md:text-5xl font-semibold text-brand-navy tracking-tighter mb-1">50+</div>
+              <div className="text-[10px] font-bold text-brand-copper uppercase tracking-[0.2em]">Commodities</div>
+            </div>
+
+            <div className="text-center md:border-r border-gray-100 last:border-0">
+              <div className="text-4xl md:text-5xl font-semibold text-brand-navy tracking-tighter mb-1">100%</div>
+              <div className="text-[10px] font-bold text-brand-copper uppercase tracking-[0.2em]">Quality Verified</div>
+            </div>
+
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-semibold text-brand-navy tracking-tighter mb-1">24/7</div>
+              <div className="text-[10px] font-bold text-brand-copper uppercase tracking-[0.2em]">Logistics Support</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
       {/* --- VALUES --- */}
       <div className="max-w-7xl mx-auto px-6 py-32">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">

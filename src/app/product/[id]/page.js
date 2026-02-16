@@ -73,13 +73,27 @@ export default async function ProductDetail({ params }) {
             </p>
 
             {/* Technical Specifications Table */}
-            <div className="bg-[#f5f5f7] rounded-3xl p-8 mb-10">
-              <h3 className="font-semibold text-xl mb-6 tracking-tight">Technical Specifications</h3>
-              <div className="space-y-4">
-                {product.specs?.map((spec, index) => (
-                  <div key={index} className="flex justify-between items-center py-3 border-b border-gray-200 last:border-0">
-                    <span className="text-slate-500 font-medium">{spec.label}</span>
-                    <span className="font-semibold text-brand-navy">{spec.value}</span>
+            <div className="bg-gray-50 rounded-2xl p-6 mb-8">
+              <h3 className="text-xl font-semibold mb-6 text-gray-900">Technical Specifications</h3>
+              
+              <div className="space-y-4"> {/* Container for the list */}
+                {product.specs.map((spec, index) => (
+                  <div 
+                    key={index} 
+                    className={`
+                      flex flex-col sm:flex-row sm:items-baseline sm:justify-between 
+                      pb-4 border-b border-gray-200 last:border-0 last:pb-0
+                    `}
+                  >
+                    {/* Label: Full width on mobile, 1/3 width on desktop */}
+                    <span className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-1 sm:mb-0 sm:w-1/3">
+                      {spec.label}
+                    </span>
+                    
+                    {/* Value: Full width on mobile, 2/3 width on desktop */}
+                    <span className="text-base font-semibold text-gray-900 sm:w-2/3 sm:text-right">
+                      {spec.value}
+                    </span>
                   </div>
                 ))}
               </div>

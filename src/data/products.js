@@ -1,5 +1,23 @@
 export const products = [
   {
+    id: "eggs",
+    title: "Fresh Table Eggs (White & Brown)",
+    shortDesc: "Premium quality, thick-shell table eggs sourced from hygienic farms.",
+    description: "We export high-quality fresh table eggs, known for their strong shells and high nutritional value. Sourced from biosecure farms, our eggs are cleaned, sorted by weight, and packed in shock-proof trays to ensure zero breakage during transit.",
+    image: "https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&q=80&w=1200", 
+    specs: [
+      { label: "Weight", value: "50g - 55g (Medium) / 55g - 60g (Large)" },
+      { label: "Shell Color", value: "White / Brown" },
+      { label: "Packaging", value: "30 Eggs/Tray, 12 Trays/Carton (360 Eggs)" },
+      { label: "Shelf Life", value: "3 - 6 Months (Reefer at +4°C)" }
+    ],
+    features: [
+      "Free from Salmonella & Antibiotics",
+      "Thick Shell for Reduced Breakage",
+      "Washed & Sanitized Surface"
+    ]
+  },
+  {
     id: "onion",
     title: "Premium Red & White Onions",
     shortDesc: "Farm-fresh, pungency-controlled onions sourced from Nashik.",

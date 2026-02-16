@@ -18,6 +18,24 @@ export const products = [
     ]
   },
   {
+    id: "potatoes",
+    title: "Fresh Potatoes (Jyoti & Laukar)",
+    shortDesc: "Farm-fresh, hand-picked potatoes with high starch content and long shelf life.",
+    description: "We export premium quality fresh potatoes sourced directly from the fertile belts of India. Our potatoes are washed, graded by size, and packed in breathable mesh bags to ensure freshness during long-transit voyages. Ideal for both table consumption and industrial processing.",
+    image: "https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&q=80&w=1200",
+    specs: [
+      { label: "Variety", value: "Jyoti / Laukar / Chandramukhi" },
+      { label: "Size", value: "45mm+ (Medium) / 55mm+ (Large)" },
+      { label: "Packaging", value: "5kg / 10kg / 20kg / 50kg Mesh Bags" },
+      { label: "Shelf Life", value: "2 - 3 Months (Stored at 3-5°C)" }
+    ],
+    features: [
+      "Washed & Soil Free",
+      "Firm Texture & Thin Skin",
+      "Free from Sprouting & Green Heads"
+    ]
+  },
+  {
     id: "onion",
     title: "Premium Red & White Onions",
     shortDesc: "Farm-fresh, pungency-controlled onions sourced from Nashik.",

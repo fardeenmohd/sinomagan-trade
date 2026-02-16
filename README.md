@@ -1,4 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sino Magan Next
+
+This is a Next.js project designed with a custom brand identity and modern web technologies.
+
+## 🛠️ Tech Stack
+
+This project utilizes the following technologies and libraries:
+
+- **Next.js**: The React Framework for production, offering server-side rendering and static site generation.
+- **Tailwind CSS**: A utility-first CSS framework used for styling the application with a custom configuration.
+- **Unsplash**: Configured to serve optimized remote images via `next/image`.
+
+## 🎨 Design System
+
+The project features a tailored design system configured in `tailwind.config.js`:
+
+- **Typography**: A highly optimized font stack that mimics the native system font (Apple System, San Francisco, Segoe UI) for a seamless user experience.
+- **Brand Colors**:
+  - Navy (`#001a33`)
+  - Copper (`#b87333`)
+  - Crimson (`#990000`)
+  - Slate (`#475569`)
 
 ## Getting Started
 

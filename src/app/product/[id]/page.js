@@ -3,11 +3,29 @@ import Link from 'next/link';
 import { products } from '@/data/products';
 import { ArrowLeft, CheckCircle2, FileText, Globe, Shield } from 'lucide-react';
 import { notFound } from 'next/navigation';
+import JsonLd from '@/components/JsonLd';
 
 export async function generateStaticParams() {
   return products.map((product) => ({
     id: product.id,
   }));
+}
+
+export async function generateMetadata({ params }) {
+  const { id } = await params; 
+
+  const product = products.find((p) => p.id === id);
+  
+  if (!product) return { title: 'Product Not Found' };
+
+  return {
+    title: `${product.title} Exporter from India | Sino Magan Indus`,
+    description: `Bulk exporter of ${product.title}. ${product.shortDesc} ISO Certified & Halal Compliant. Shipping to Gulf, Asia, and Europe.`,
+    keywords: [`Buy ${product.title} wholesale`, `${product.title} supplier India`, `Bulk ${product.title} price`],
+    openGraph: {
+      images: [product.image],
+    },
+  };
 }
 
 export default async function ProductDetail({ params }) {
@@ -21,6 +39,8 @@ export default async function ProductDetail({ params }) {
 
   return (
     <div className="min-h-screen bg-white text-[#1d1d1f]">
+      <JsonLd product={product} />
+      
       {/* --- BREADCRUMBS / BACK NAV --- */}
       <div className="max-w-7xl mx-auto px-6 py-8">
         <Link href="/products" className="flex items-center gap-2 text-slate-400 hover:text-brand-copper transition-colors font-semibold text-sm group">

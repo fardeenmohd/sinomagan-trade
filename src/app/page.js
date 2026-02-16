@@ -5,6 +5,50 @@ import BusinessCard from '@/components/BusinessCard';
 import { ArrowRight, Anchor, TrendingUp, ShieldCheck, Globe } from 'lucide-react';
 import { products } from '@/data/products';
 
+export const metadata = {
+  title: 'Sino Magan Indus | Global Trade & Exporter from India',
+  description: 'Leading exporter of Premium Spices, Basmati Rice, Halal Meat, and Industrial Copper Cathodes. We bridge global markets with trusted logistics and certified quality.',
+  keywords: [
+    'Global Trade India',
+    'Import Export Company',
+    'Bulk Spices Exporter',
+    'Frozen Halal Meat India',
+    'Copper Cathodes Supplier',
+    'Indian Basmati Rice Export',
+    'Sino Magan Indus'
+  ],
+  openGraph: {
+    title: 'Sino Magan Indus - Bridging Markets, Delivering Trust',
+    description: 'Your trusted partner for sourcing Spices, Rice, Meat, and Industrial Metals from India to the world.',
+    url: 'https://sinomagan.vercel.app',
+    siteName: 'Sino Magan Indus',
+    images: [
+      {
+        url: '/images/og-home.jpg', // Make sure you have a generic banner image at public/images/og-home.jpg
+        width: 1200,
+        height: 630,
+        alt: 'Sino Magan Indus Global Trade Logistics',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://sinomagan.vercel.app',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
 const globalNetwork = [
   { name: "India", flag: "🇮🇳", role: "Global HQ & Sourcing" },
   { name: "China", flag: "🇨🇳", role: "Industrial Procurement" },

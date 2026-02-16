@@ -4,6 +4,41 @@ import Image from 'next/image';
 import BusinessCard from '@/components/BusinessCard';
 import { MapPin, ArrowRight, ArrowDownLeft, ArrowUpRight, Anchor, Globe } from 'lucide-react';
 
+export const metadata = {
+  title: 'Global Reach - Logistics Network & Export Destinations',
+  // Result: "Global Reach - Logistics Network & Export Destinations | Sino Magan Indus"
+
+  description: 'Explore the Sino Magan Indus trade network. We export premium commodities to the Gulf, Southeast Asia, Europe, and Africa. Our streamlined logistics ensure timely and secure delivery worldwide.',
+
+  keywords: [
+    'International Logistics India',
+    'Global Supply Chain',
+    'Export Destinations',
+    'Shipping to Gulf',
+    'Export to Southeast Asia',
+    'Trade Network',
+    'Sino Magan Indus Locations'
+  ],
+
+  openGraph: {
+    title: 'Sino Magan Indus | Our Global Footprint',
+    description: 'From India to the World. See where we deliver trust and quality.',
+    url: 'https://sinomagan.vercel.app/global-reach',
+    images: [
+      {
+        url: '/images/global-map-og.jpg', // A static image of a world map with your trade routes
+        width: 1200,
+        height: 630,
+        alt: 'Sino Magan Indus Global Trade Map',
+      },
+    ],
+  },
+
+  alternates: {
+    canonical: 'https://sinomagan.vercel.app/global-reach',
+  },
+};
+
 // --- DATA: Country Portfolio ---
 const countries = [
   {

@@ -1,5 +1,30 @@
 import { ShieldCheck, Globe2, Handshake, Factory, Truck, CheckCircle2 } from 'lucide-react';
 
+export const metadata = {
+  title: 'About Us - Our Story & Global Vision', 
+  // Result: "About Us - Our Story & Global Vision | Sino Magan Indus"
+
+  description: 'Discover Sino Magan Indus, a premier global trade partner based in India. We bridge international markets with verified suppliers, secure logistics, and a commitment to quality in Spices, Rice, Meat, and Industrial components.',
+
+  openGraph: {
+    title: 'About Sino Magan Indus | Bridging Markets, Delivering Trust',
+    description: 'From local farms to global industries, read how we ensure quality and reliability in every shipment.',
+    url: 'https://sinomagan.vercel.app/about',
+    images: [
+      {
+        url: '/images/about-team.jpg', // Create a specific image showing your team or office
+        width: 1200,
+        height: 630,
+        alt: 'The Sino Magan Indus Team',
+      },
+    ],
+  },
+
+  alternates: {
+    canonical: 'https://sinomagan.vercel.app/about',
+  },
+};
+
 const values = [
   {
     title: "Quality Integrity",

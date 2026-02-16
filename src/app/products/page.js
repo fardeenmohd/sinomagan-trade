@@ -3,6 +3,41 @@ import Image from 'next/image';
 import { products } from '@/data/products';
 import { ArrowRight, PackageSearch, ArrowUpRight } from 'lucide-react';
 
+export const metadata = {
+  title: 'Our Products - Wholesale Spices, Rice, Meat & Industrial Supplies',
+  // Result: "Our Products - Wholesale Spices, Rice, Meat & Industrial Supplies | Sino Magan Indus"
+
+  description: 'Browse our extensive catalog of premium Indian exports. We supply bulk Red Onions, Basmati Rice, Halal Buffalo Meat, and LME Grade A Copper Cathodes to global markets with certified quality assurance.',
+
+  keywords: [
+    'Wholesale Food Suppliers India',
+    'Bulk Agricultural Commodities',
+    'Indian Spices Catalog',
+    'Frozen Meat Exporters List',
+    'Industrial Raw Materials',
+    'Export Quality Products',
+    'Sino Magan Indus Catalog'
+  ],
+
+  openGraph: {
+    title: 'Sino Magan Indus Product Catalog',
+    description: 'Explore our premium range of verified Indian exports. Sourcing excellence for global businesses.',
+    url: 'https://sinomagan.vercel.app/products',
+    images: [
+      {
+        url: '/images/products-og.jpg', // A collage image of your top 4-5 products
+        width: 1200,
+        height: 630,
+        alt: 'Sino Magan Indus Product Range',
+      },
+    ],
+  },
+
+  alternates: {
+    canonical: 'https://sinomagan.vercel.app/products',
+  },
+};
+
 export default function ProductsPage() {
   return (
     <div className="min-h-screen bg-white text-[#1d1d1f] flex flex-col">
